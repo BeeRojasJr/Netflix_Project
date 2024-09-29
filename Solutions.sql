@@ -101,13 +101,13 @@ ORDER BY release_year;
 
 
 
--- 7. Find all the movies/TV shows by director 'Steven Spielberg'!
+-- 7.Find all movies or TV shows directed by Cathy Garcia-Molina!
 
 -- I use ILIKE over '=' because there are some movies and TV shows that has more than 1 director
 
 SELECT *
 FROM netflix
-WHERE director ILIKE '%Steven Spielberg%'
+WHERE director ILIKE '%Cathy Garcia-Molina%'
 
 
  
@@ -239,3 +239,4 @@ GROUP BY 1
 
 
 -- End of reports
+
