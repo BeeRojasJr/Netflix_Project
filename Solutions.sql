@@ -71,7 +71,6 @@ WHERE country IS NOT NULL
 GROUP BY country
 ORDER BY total_content DESC
 LIMIT 5
-
 ;
 
 
@@ -101,13 +100,13 @@ ORDER BY release_year;
 
 
 
--- 7.Find all movies or TV shows directed by Cathy Garcia-Molina!
+-- 7. Find all the movies or TV shows by directed by 'Cathy Garcia-Molina'!
 
 -- I use ILIKE over '=' because there are some movies and TV shows that has more than 1 director
 
 SELECT *
 FROM netflix
-WHERE director ILIKE '%Cathy Garcia-Molina%'
+WHERE director ILIKE '%Cathy Garcia-Molina%';
 
 
  
@@ -137,7 +136,7 @@ ORDER BY count DESC
 
 
 -- 10.Find each year and the average numbers of content from Philippines that release on netflix. 
--- return top 5 year with highest avg content release!
+-- return top 5 year with highest avg content release.
 
 -- filter release content from Philippines only  
 -- find the total number of content that added in netflix per year
@@ -153,7 +152,8 @@ FROM netflix
 WHERE country = 'Philippines' 
 GROUP BY 1
 ORDER BY 3 DESC
-LIMIT 5;
+LIMIT 5
+;
 
 
 
@@ -166,7 +166,8 @@ LIMIT 5;
 
 SELECT show_id, type, title, listed_in
 FROM netflix
-WHERE listed_in ILIKE  '%Documentaries%' AND type = 'Movie';
+WHERE listed_in ILIKE  '%Documentaries%' AND type = 'Movie'
+;
 
 
 
@@ -180,7 +181,7 @@ WHERE director IS NULL
 ;
 
 
---13. Find how many movies actor 'Henry Cavill' appeared in last 5 years!
+-- 13. Find how many movies actor 'Henry Cavill' appeared in last 5 years.
 
 
 -- filter movie
@@ -191,7 +192,8 @@ SELECT  show_id, type, title, casts
 FROM netflix
 WHERE casts ILIKE '%Henry Cavill%' AND type = 'Movie'  
 	AND release_year > EXTRACT(YEAR FROM CURRENT_DATE) - 5
-GROUP BY show_id, type, title, casts;
+GROUP BY show_id, type, title, casts
+;
 
 
 
@@ -236,7 +238,7 @@ SELECT
 	COUNT (*) AS total_content	
 FROM new_table
 GROUP BY 1
+;
 
 
 -- End of reports
-
