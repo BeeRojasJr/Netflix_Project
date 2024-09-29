@@ -396,4 +396,4 @@ GROUP BY 1
 This project is a key component of my portfolio, demonstrating the SQL skills necessary for data analyst positions. If you have any questions, feedback, or are interested in collaborating, please don’t hesitate to reach out!
 
 ## Get in touch!
-- **LinkedIn**:[Connect with me](https://www.linkedin.com/in/beerojas/)
+- **LinkedIn**: [Let's connect and explore professional opportunities](https://www.linkedin.com/in/beerojas/)
