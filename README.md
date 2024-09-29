@@ -9,11 +9,16 @@ This project focuses on an in-depth analysis of Netflix's movie and TV show data
 ## Objectives
 
 - Compare Content Types: Analyze the distribution of movies versus TV shows on Netflix.
-- Identify Common Ratings: Determine the most frequent ratings for both movies and TV shows.
-- Analyze Global Content: Find the top 5 countries producing the most Netflix content.
-- Explore Genres and Directors: Count content by genre and analyze contributions from directors like Steven Spielberg.
-- Classify Content by Themes: Categorize content based on the presence of keywords like 'kill' and 'violence' and label them as 'Good' or 'Bad.'
-
+- Enhance Viewer Engagement: Provide data for recommending TV shows with more than 5 seasons to viewers who prefer series with extensive content.
+- Enhance User Recommendations: Provide data for recommending movies based on popular actors within the Filipino film industry.
+-  Analyze Trends in Filipino Content: Gain insights into trends in content production from the Philippines over time, helping to understand the growth or decline 
+   in local offerings.
+- Inform Casting and Development Strategies: Help Netflix assess the performance and popularity of actors in the Philippines for future casting and content 
+  development decisions.
+- Enhance User Recommendations: Provide data for recommending movies and TV shows directed by Cathy Garcia-Molina to viewers who prefer content from specific 
+   directors.
+- Categorize Content by Themes: Classify Netflix content into two categories—'Bad' for items containing the keywords 'kill' or 'violence,' and 'Good' for all 
+   other content.
 
 ## Dataset 
 
@@ -58,7 +63,7 @@ FROM netflix
 GROUP BY type ;
 ```
 **Objectives:** 
-Support Business Decisions: Help stakeholders understand which type of content, movies or TV shows, dominates the platform for potential content acquisition or production strategies.
+- Support Business Decisions: Help stakeholders understand which type of content, movies or TV shows, dominates the platform for potential content acquisition or production strategies.
 
 
 
@@ -83,7 +88,8 @@ WHERE ranking = 1
 ;
 ```
 **Objectives:** 
-Gain insights into the distribution of content ratings, helping to understand audience preferences and Netflix's content strategy.
+- Gain insights into the distribution of content ratings, helping to understand audience preferences and Netflix's content strategy.
+
 
 
 ### 3. List all movies released in 2018 
@@ -95,7 +101,8 @@ WHERE release_year = 2018 AND type = 'Movie'
 ;
 ```
 **Objective:** 
-Identify 2018 Movie Releases: Retrieve a list of all movies released on Netflix in 2018.
+- Identify 2018 Movie Releases: Retrieve a list of all movies released on Netflix in 2018.
+
 
 
 ### 4. Find the top 5 countries with the most content on Netflix
@@ -111,7 +118,8 @@ LIMIT 5
 ;
 ```
 **Objective:** 
-Identify Top Content-Producing Countries: Determine the top 5 countries with the most content available on Netflix.
+- Identify Top Content-Producing Countries: Determine the top 5 countries with the most content available on Netflix.
+
 
 
 ### 5. Identify the longest movie
@@ -126,7 +134,7 @@ LIMIT 1
 ; 
 ```
 **Objective:** 
-Find the Longest Movie: Identify the movie with the longest duration available on Netflix.
+- Find the Longest Movie: Identify the movie with the longest duration available on Netflix.
 
 
 
@@ -139,9 +147,9 @@ WHERE release_year > EXTRACT(YEAR FROM CURRENT_DATE) - 5
 ORDER BY release_year
 ;
 ```
-
 **Objective:** 
-Identify Recent Content: Retrieve all movies and TV shows released on Netflix within the last 5 years.
+- Identify Recent Content: Retrieve all movies and TV shows released on Netflix within the last 5 years.
+
 
 
 ### 7. Find all the movies or TV shows by directed by 'Cathy Garcia-Molina'.
@@ -165,6 +173,7 @@ WHERE director ILIKE '%Cathy Garcia-Molina%'
 - Contribute to Director-Based Analysis: Help track and analyze content trends and the popularity of specific directors on the platform.
 
 
+
 ### 8. List all TV shows with more than 5 seasons
 
 ```sql
@@ -186,6 +195,7 @@ WHERE type = 'TV Show'
 - Inform Content Strategy: Help Netflix assess the success of long-running series for future content acquisition and production decisions.
 
 
+
 ### 9. Count the number of content items in each genre
 
 ```sql
@@ -199,6 +209,7 @@ ORDER BY count DESC
 ```
 **Objective:** 
 - Count Content by Genre: Determine the number of content items available on Netflix for each genre.
+
 
 
 ### 10. 
@@ -230,6 +241,7 @@ LIMIT 5
    audience engagement.
 
 
+
 ### 11. List all movies that are documentaries
 
 ```sql
@@ -250,6 +262,7 @@ WHERE listed_in ILIKE  '%Documentaries%' AND type = 'Movie'
 - Inform Content Development: Help Netflix assess the demand and trends in the documentary genre for future content acquisition or production decisions.
 
 
+
 ### 12. Find all content without a director
 
 ```sql
@@ -260,6 +273,7 @@ WHERE director IS NULL
 ```
 **Objective:** 
 Enhance Data Accuracy: Provide data to help improve the accuracy and completeness of Netflix's content database by addressing entries missing key information.
+
 
 
 ### 13. Find how many movies actor 'Henry Cavill' appeared in last 5 years.
@@ -283,6 +297,7 @@ GROUP BY show_id, type, title, casts
 - Enhance User Recommendations: Provide data to recommend movies featuring Henry Cavill to viewers looking for his performances.
 
 - Inform Casting and Acquisition Strategies: Help Netflix assess the impact of actor presence, such as Henry Cavill, on viewership and content strategy decisions.
+
 
 
 ### 14. Find the top 10 actors who have appeared in the highest number of movies produced in Philippines.
@@ -309,6 +324,7 @@ LIMIT 10
 
 - Help Netflix assess the performance and popularity of actors in the Philippines for future casting and content 
    development decisions.
+
 
 
 ### 15. Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field. Label content containing these keywords as 'Bad' and all other content as 'Good'. Count how many items fall into each category.
@@ -340,9 +356,44 @@ GROUP BY 1
 - Count Content Items: Count the total number of items that fall into each category to understand the distribution of content themes on the platform.
   
 - Analyze Content Themes: Gain insights into how prevalent violent or harmful themes are in Netflix's catalog, informing content moderation strategies.
-  
+
 - Support Content Filtering and Recommendations: Provide data that can assist in content filtering for viewers seeking less violent options or help in creating 
    curated lists based on content themes.
 
 - Inform Marketing and Audience Engagement Strategies: Use the categorized data to shape marketing campaigns, targeting specific audience preferences regarding      content themes.
        
+
+
+
+
+## Findings
+- **Content Types:** Movies significantly outnumber TV shows on Netflix, indicating a need for a more balanced offering to enhance viewer engagement.
+- **Long-Running Series:** Many TV shows with over 5 seasons highlight viewer interest in binge-worthy content, supporting targeted recommendations for those 
+    preferences.
+- **Filipino Actors/Actress:** Prominent actors from the Filipino film industry drive viewership, suggesting Netflix should prioritize these talents in casting 
+    and development.
+- **Growth of Filipino Content:** A steady increase in local productions indicates Netflix's success in tapping into regional markets and understanding content 
+    trends.
+- **Categorization of Content Themes:** The classification of content into 'Bad' and 'Good' based on the presence of violent keywords provides insights into 
+    viewer preferences. This thematic analysis enables Netflix to refine content recommendations, promoting family-friendly options while addressing viewer 
+    concerns regarding violent content.
+
+
+## Conclusions
+- **Diversification Strategy:** Netflix should diversify its offerings by increasing the number of series to improve viewer engagement.
+- **Maximizing Engagement through Long-Running Series:** The popularity of TV shows with more than 5 seasons highlights an opportunity for Netflix to create more 
+    content in this format, improving viewer retention and satisfaction.
+- **Key Talent for Recommendations:** Highlighting films featuring popular Filipino actors can enhance user recommendations and attract specific audiences.
+- **Investing in Local Productions:** The growth in Filipino content suggests that continued investment in regional productions is beneficial for audience 
+    engagement.
+- **Thematic Content Recommendations:** The categorization of content based on themes of 'kill' and 'violence' supports Netflix's objective of enhancing user 
+    recommendations by guiding viewers toward more suitable options while also ensuring a responsible approach to content promotion.
+
+
+
+## Author - Bee Rojas Jr
+
+This project is a key component of my portfolio, demonstrating the SQL skills necessary for data analyst positions. If you have any questions, feedback, or are interested in collaborating, please don’t hesitate to reach out!
+
+## Get in touch!
+- **LinkedIn**:[Connect with me](https://www.linkedin.com/in/beerojas/)
