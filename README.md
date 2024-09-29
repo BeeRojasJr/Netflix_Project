@@ -302,11 +302,15 @@ GROUP BY 1
 ;
 ```
 **Objective:**
--- Categorize Content by Themes: Classify Netflix content into two categories—'Bad' for items containing the keywords 'kill' or 'violence,' and 'Good' for all 
+- Categorize Content by Themes: Classify Netflix content into two categories—'Bad' for items containing the keywords 'kill' or 'violence,' and 'Good' for all 
    other content.
--- Count Content Items: Count the total number of items that fall into each category to understand the distribution of content themes on the platform.
--- Analyze Content Themes: Gain insights into how prevalent violent or harmful themes are in Netflix's catalog, informing content moderation strategies.
--- Support Content Filtering and Recommendations: Provide data that can assist in content filtering for viewers seeking less violent options or help in creating 
+  
+- Count Content Items: Count the total number of items that fall into each category to understand the distribution of content themes on the platform.
+  
+- Analyze Content Themes: Gain insights into how prevalent violent or harmful themes are in Netflix's catalog, informing content moderation strategies.
+  
+- Support Content Filtering and Recommendations: Provide data that can assist in content filtering for viewers seeking less violent options or help in creating 
    curated lists based on content themes.
--- Inform Marketing and Audience Engagement Strategies: Use the categorized data to shape marketing campaigns, targeting specific audience preferences regarding      content themes.
+
+- Inform Marketing and Audience Engagement Strategies: Use the categorized data to shape marketing campaigns, targeting specific audience preferences regarding      content themes.
        
